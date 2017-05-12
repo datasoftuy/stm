@@ -11,27 +11,37 @@ namespace leapyear
         {
 
 
-            
+
+
+            bool salir = false;
+            string otravez;
+            while (salir != true)
+            {
+
+
+
                 const double precioboleto = 33;
                 int cargacomun;
                 double cargajubAB;
-                
-                int cargaestA;
-                int cargaestB;
+                double cargaestAB;
                 string opcion;
                 double descuentoJubA;
                 double descuentoJubB;
                 double totalJubA;
                 double cantidadboletosJubA;
                 double cantidadboletosJubB;
+                double abonarEST_A;
+
                 //string cantidadboletosJubA_aux;
+
+
 
 
 
 
                 Console.Clear();
 
-                Console.WriteLine("*** Sistema de carga de STM ***\n\n");
+                Console.WriteLine("*** Sistema de carga de STM DATASOFT URUGUAY ***\n\n");
 
                 Console.WriteLine("Menu Principal Ingrese la opcion\n");
 
@@ -135,20 +145,48 @@ namespace leapyear
 
                         break;
 
-                    default: Console.WriteLine( opcion +" No es una opcion valida del menu stm");
-                        Console.ReadLine();
+                    case "3":
+
+                                Console.WriteLine("Ingrese monto");
+                                cargaestAB = Convert.ToInt32(Console.ReadLine());
+
+                                if (cargaestAB == 5 || cargaestAB == 10 || cargaestAB == 25 || cargaestAB == 50)
+                                {
+
+                                    abonarEST_A = cargaestAB * precioboleto;
+                                    double descuentoEST_A = abonarEST_A * 0.50;
+                                    double totalEST_A = abonarEST_A - descuentoEST_A;
+
+
+                                    Console.WriteLine("Debe de abonar: "+ totalEST_A);
+                                    
+                                }
+
+
+
                         break;
 
 
 
-
-
+                    default: Console.WriteLine(opcion + " No es una opcion valida del menu stm");
+                        Console.ReadLine();
+                        break;
 
 
                 }
 
-                
-            
+
+
+
+
+
+                Console.WriteLine("Desea realizar otra carga ? s/n");
+                otravez = Console.ReadLine().ToLower();
+                if (otravez == "n")
+                {
+                    salir = true;
+                }
+            }
 
 
 
