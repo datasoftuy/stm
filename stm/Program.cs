@@ -31,6 +31,7 @@ namespace leapyear
                 double cantidadboletosJubA;
                 double cantidadboletosJubB;
                 double abonarEST_A;
+                double abonarEST_B;
 
                 //string cantidadboletosJubA_aux;
 
@@ -56,7 +57,7 @@ namespace leapyear
                 switch (opcion)
                 {
 
-                    case "1":
+                    case "5":
 
                         Console.WriteLine("Ingrese monto");
                         cargacomun = Convert.ToInt32(Console.ReadLine());
@@ -166,6 +167,31 @@ namespace leapyear
 
                         break;
 
+                    case "4":
+
+
+
+
+                        Console.WriteLine("Ingrese monto");
+                                cargaestAB = Convert.ToInt32(Console.ReadLine());
+
+                                if (cargaestAB == 10 || cargaestAB == 25 || cargaestAB == 50 || cargaestAB == 100)
+                                {
+
+                                    abonarEST_B = cargaestAB * precioboleto;
+                                    double descuentoEST_B =abonarEST_B * 0.75;
+                                    double totalEST_B = abonarEST_B - descuentoEST_B;
+
+
+                                    Console.WriteLine("Debe de abonar: "+ totalEST_B);
+                                    
+                                }
+
+
+
+
+
+                        break;
 
 
                     default: Console.WriteLine(opcion + " No es una opcion valida del menu stm");
