@@ -11,16 +11,11 @@ namespace leapyear
         {
 
 
-            Console.Clear();
-
-            bool salir = false;
-            string otravez;
-            while (salir != true)
-            {
+            
                 const double precioboleto = 33;
                 int cargacomun;
-                double cargajubA;
-                double cargajuB;
+                double cargajubAB;
+                
                 int cargaestA;
                 int cargaestB;
                 string opcion;
@@ -85,56 +80,45 @@ namespace leapyear
                     case "2":
 
                         Console.WriteLine("Ingrese monto");
-                        cargajubA = Convert.ToInt32(Console.ReadLine());
+                        cargajubAB = Convert.ToInt32(Console.ReadLine());
 
 
 
-                        if (cargajubA == 50)
+                        if (cargajubAB == 50)
                         {
 
 
-
-
-                            descuentoJubA = cargajubA * 0.50;
-                            totalJubA = cargajubA - descuentoJubA;
-                            cantidadboletosJubA = (cargajubA / precioboleto);
+                            descuentoJubA = cargajubAB * 0.50;
+                            totalJubA = cargajubAB - descuentoJubA;
+                            cantidadboletosJubA = (cargajubAB / precioboleto);
 
                             int a = (int)cantidadboletosJubA;
                             string cantidadboletosJubA_aux = Convert.ToString(cantidadboletosJubA);
 
-                            // Console.WriteLine("CADENA CONVERTIDA: " + cantidadboletosJubA_aux);
-
-
-
-
-
-                            Console.WriteLine("Se acredito: " + cargajubA + " Y debe de pagar " + totalJubA);
-                            Console.WriteLine("Su carga sirve para:  " + cantidadboletosJubA_aux.Trim().Substring(0, 1)+ " boleto");
+                            Console.WriteLine("Se acredito: " + cargajubAB + " Y debe de pagar " + totalJubA);
+                            Console.WriteLine("Su carga sirve para:  " + cantidadboletosJubA_aux.Trim().Substring(0, 1) + " boleto");
                             Console.ReadLine();
-
-
 
                         }
 
 
-                        else if (cargajubA == 500)
+                        else if (cargajubAB == 500)
                         {
 
 
-                            Console.WriteLine("Ingrese monto");
-                            cargajuB = Convert.ToInt32(Console.ReadLine());
-                            
-                            descuentoJubB = cargajubA * 0.25;
-                            totalJubA = cargajuB - descuentoJubB;
 
-                            cantidadboletosJubB = (cargajuB / precioboleto);
+
+                            descuentoJubB = cargajubAB * 0.25;
+                            totalJubA = cargajubAB - descuentoJubB;
+
+                            cantidadboletosJubB = (cargajubAB / precioboleto);
 
                             int a = (int)cantidadboletosJubB;
                             string cantidadboletosJubB_aux = Convert.ToString(cantidadboletosJubB);
 
 
 
-                            Console.WriteLine("Se acredito: " + cargajubA + " Y debe de pagar " + totalJubA);
+                            Console.WriteLine("Se acredito: " + cargajubAB + " Y debe de pagar " + totalJubA);
                             Console.WriteLine("Su carga sirve para:  " + cantidadboletosJubB_aux.Trim().Substring(0, 2) + " boletos");
                             Console.ReadLine();
 
@@ -149,14 +133,9 @@ namespace leapyear
                         }
 
 
-
-
                         break;
 
-
-
-
-                    default: Console.WriteLine("No es una opcion" + opcion);
+                    default: Console.WriteLine( opcion +" No es una opcion valida del menu stm");
                         Console.ReadLine();
                         break;
 
@@ -168,13 +147,8 @@ namespace leapyear
 
                 }
 
-                Console.WriteLine("Desea realizar otra carga s/n");
-                otravez = Console.ReadLine().ToLower();
-                if (otravez == "n")
-                {
-                    salir = true;
-                }
-            }
+                
+            
 
 
 
